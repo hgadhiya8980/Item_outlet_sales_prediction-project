@@ -1,0 +1,243 @@
+<html>
+    <head>
+        <title>Item outlet price prediction model</title>
+        <style>
+            *{
+                margin: 0;
+                padding: 0;
+                font-family: Arial, Helvetica, sans-serif;
+            }
+            .image-1
+            {
+                width: 100%;
+                height: 400px;
+            }
+            .heading{
+                min-height: 60px;
+                background-color: #333;
+                border-radius: 30px;
+            }
+            .heading h1{
+                font-size: 30px;
+                font-weight: bold;
+                padding: 20px;
+                font-family: sans-serif;
+                color: white;
+                text-align: center;
+
+            }
+            .from-sec
+            {
+                background-color: #777;
+                height: 450px;
+            }
+            .pred
+            {
+                padding-top: 80px;
+            }
+            input[type="text"]
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+
+            }
+            .btn
+            {
+                margin-top: 50px;
+            }
+            input[type="submit"]
+            {
+                color: white;
+                background-color: #333;
+                font-size: 20px;
+                font-weight: bold;
+                letter-spacing: 1px;
+                border: none;
+                height: 50px;
+                width: 150px;
+                border-radius: 50px;
+                padding: 10px;
+                margin-bottom: 40px;
+            }
+            input[type="submit"]:hover
+            {
+                background-color: rgb(255, 93, 93);
+                font-weight: bold;
+            }
+            .from-sec h1{
+                color: white;
+                font-size: 30px;
+            }
+            .Outlet_Identifier
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Location_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Outlet_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Item_Identifier
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Item_Fat_Content
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .Item_Type
+            {
+                border: none;
+                padding: 10px;
+                width: 250px;
+                margin-right: 5px;
+                margin-bottom: 4px;
+            }
+            .footer h3{
+                background-color: #333;
+                color: white;
+                text-align: center;
+                padding: 20px;
+                font-size: 25px;
+                font-weight: bold;
+                font-family: sans-serif;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="header">
+            <div class="images">
+                <img src="static\images\main-banner.jpg" class="image-1">
+            </div>
+        </div>
+        <div class="container">
+            <div class="heading">
+                <h1>Item outlet price prediction model</h1>
+            </div>
+        </div>
+        <div class="from-sec">
+            <center>
+                <form name="prediction" action="/predict" method="POST" class="pred">
+                <input type="text" placeholder="Item_Weight" name="Item_Weight">
+                <input type="text" placeholder="Item_Visibility" name="Item_Visibility">
+                <input type="text" placeholder="Item_MRP" name="Item_MRP">
+                <input type="text" placeholder="Outlet_Establishment_Year" name="Outlet_Establishment_Year">
+                <select class="Item_Identifier" name="Item_Identifier">
+                    <option>FDW13</option>
+                    <option>FDG33</option>
+                    <option>NCY18</option>
+                    <option>FDD38</option>
+                    <option>DRE49</option>
+                    <option>FDV60</option>
+                    <option>NCQ06</option>
+                    <option>FDF52</option>
+                    <option>FDX04</option>
+                    <option>NCJ30</option>
+                    <option>FDV38</option>
+                    <option>NCF42</option>
+                    <option>FDT07</option>
+                    <option>FDW26</option>
+                    <option>NCL31</option>
+                    <option>FDU12</option>
+                    <option>FDG09</option>
+                    <option>FDQ40</option>
+                    <option>FDX20</option>
+                    <option>NCI54</option>
+                    <option>FDX31</option> 
+                    <option>FDP25</option>
+                    <option>FDW49</option>
+                    <option>FDF56</option>
+                    <option>FDO19</option>
+                    <option>DRN47</option>
+                    <option>NCB18</option>
+                </select><br>
+                <select class="Item_Fat_Content" name="Item_Fat_Content">
+                    <option>Low Fat</option>
+                    <option>Regular</option>
+                    <option>LF</option>
+                    <option>reg</option>
+                    <option>low fat</option>
+                </select>
+                <select class="Item_Type" name="Item_Type">
+                    <option>Fruits and Vegetables</option>
+                    <option>Snack Foods</option>
+                    <option>Household</option>
+                    <option>Frozen Foods</option>
+                    <option>Dairy</option>
+                    <option>Canned</option>
+                    <option>Baking Goods</option>
+                    <option>Health and Hygiene</option>
+                    <option>Soft Drinks</option>
+                    <option>Meat</option>
+                    <option>Breads</option>
+                    <option>Hard Drinks</option>
+                    <option>Others</option>
+                    <option>Starchy Foods</option>
+                    <option>Breakfast</option>
+                    <option>Seafood</option>
+                </select>
+                <select class="Outlet_Identifier" name="Outlet_Identifier">
+                    <option>OUT027</option>
+                    <option>OUT019</option>
+                    <option>OUT013</option>
+                    <option>OUT049</option>
+                    <option>OUT046</option>
+                    <option>OUT035</option>
+                    <option>OUT045</option>
+                    <option>OUT018</option>
+                    <option>OUT017</option>
+                    <option>OUT010</option>
+                </select>
+                <select class="Outlet_Location_Type" name="Outlet_Location_Type">
+                    <option>Tier 1</option>
+                    <option>Tier 2</option>
+                    <option>Tier 3</option>
+                </select>
+                <select class="Outlet_Type" name="Outlet_Type">
+                    <option>Supermarket Type1</option>
+                    <option>Supermarket Type2</option>
+                    <option>Supermarket Type3</option>
+                    <option>Grocery Store</option>
+                </select><br>
+                <div class="btn">
+                    <input type="submit" class="submit" value="Predict">
+                </div>
+                <div>
+                    <h1> {{ prediction_text }}</h1>
+                </div>
+            </form></center>
+        </div>
+        <div class="footer">
+            <h3>
+                Delivery Contact:
+                harshitpatel8980@gmail.com<br>
+            </h3>
+        </div>
+    </body>
+</html>

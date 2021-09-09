@@ -116,7 +116,7 @@ def predict():
                                             Item_Fat_Content, Item_Type, Outlet_Identifier, Outlet_Location_Type, Outlet_Type)
     predicated_price = round(predicated_price1, 2)
 
-    return render_template("index.html", prediction_text="Predicated price of bangalore House is {} RS".format(predicated_price))
+    return render_template("index.html", prediction_text="Predicated price of Item-outlet sales is {} RS".format(predicated_price))
 
 
 if __name__ == "__main__":
